@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    logged In: {{$store.state.loggedIn}}
   </div>
 </template>
 

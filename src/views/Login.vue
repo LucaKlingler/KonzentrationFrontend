@@ -21,10 +21,12 @@ export default {
   },
   methods:{
     login(){
-      if(this.email==='luca@test.com' && this.password==='horsestaplebatterypower'){
+      if(this.email==='luca@test.com' && this.password==='horsepowerbatterystaple'){
         alert('logged in succesfully'); 
+        this.$store.state.loggedIn = true;
       }else{
         alert('du komsch hier ned rein');
+        this.$store.state.loggedIn = false;
       }
     }
   }
