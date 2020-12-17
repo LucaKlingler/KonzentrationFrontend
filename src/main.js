@@ -13,8 +13,21 @@ const store = new Vuex.Store({
     loggedIn:false,
   }
 });
+
+router.beforeEach((to, from, next) => {
+  if(to.matched.some(record => record.meta.requiresAuth)){
+    if(!store.state.loggedIn) {
+      next({name:'Login'});
+    }else{
+      next();
+    }
+  }else{
+    next();
+  }
+});
 new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app')
+
