@@ -22,8 +22,9 @@ export default {
   methods:{
     login(){
       if(this.email==='luca@test.com' && this.password==='horsepowerbatterystaple'){
-        alert('logged in succesfully'); 
+        //alert('logged in succesfully'); 
         this.$store.state.loggedIn = true;
+        this.$router.push('/');
       }else{
         alert('du komsch hier ned rein');
         this.$store.state.loggedIn = false;
